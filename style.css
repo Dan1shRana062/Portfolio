@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: black;
+    overflow: clip;
+    font-family: 'Inter', sans-serif;
+}
+
+#para {
+    color: #fefefe;
+    font-size: 25px;
+    margin-top: 30px;
+    width: 632px;
+    line-height: 32px;
+}
+
+#backgroundWrapper {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    position: absolute;
+    place-items: end;
+}
+
+#backgroundImage {
+    background-image: url("./assets/yoinked.svg");
+    width: 850px;
+    height: 850px;
+    animation: breeze 3s infinite;
+}
+
+#greeting, #name {
+    color: #fefefe;
+    font-size: 48px;
+}
+
+#introWrapper {
+    display: grid;
+    position: absolute;
+    height: 100%;
+    width: 800px;
+    place-items: center;
+    z-index: 1;
+}
+
+#homePage {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.switchPage {
+    animation: toLeft 3000ms forwards;
+}
+
+#intro {
+    height: 292px;
+    width: 700px;
+}
+
+@keyframes breeze {
+    10%{
+        filter: hue-rotate(10deg);
+    }
+    20%{
+        filter: hue-rotate(20deg);
+    }
+    30%{
+        filter: hue-rotate(40deg);
+    }
+    40%{
+        filter: hue-rotate(60deg);
+    }
+    50%{
+        filter: hue-rotate(80deg);
+    }
+    60%{
+        filter: hue-rotate(60deg);
+    }
+    70%{
+        filter: hue-rotate(40deg);
+    }
+    80%{
+        filter: hue-rotate(20deg);
+    }
+    90%{
+        filter: hue-rotate(10deg);
+    }
+    100%{
+        filter: hue-rotate(0deg);
+    }
+}
+#navigation {
+    color: #efefef;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+#navigation #navigationButtonWrapper {
+    display: grid;
+    width: 100%;
+    place-items: end;
+}
+
+#navigation #navigationButtonWrapper #navigationButton {
+    background: transparent;
+    width: 200px;
+    border: none;
+    color: #efefef;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#navigation #navigationButtonWrapper #navigationButton #navigationIcon {
+    fill: #efefef;
+    height: 24px;
+    width: auto;
+    display: none;
+    padding-top: 8px;
+    transition: all 600ms;
+}
+
+#navigation #navigationButtonWrapper #navigationButton:hover {
+    animation: pull 250ms forwards;
+}
+
+@keyframes pull {
+    100% { transform: scaleX(1.15); }
+}
+
+@keyframes toLeft {
+    0% { left: 0; }
+    100% { left: -150%; }
+}
+
+#highlightsPage{
+    color: #fefefe;
+    position: absolute;
+    font-size: 36px;
+    width: 100%;
+    margin-top: 60px;
+    z-index: 1;
+    display: none;
+    place-items: center;
+    text-align: center;
+    opacity: 0;
+    
+}
+#columns{
+    display: grid; 
+    grid-template-columns: repeat(2,600px);
+    gap: 30px;
+    margin-top: 40px;
+    
+    
+}
+div#highlightsPage div#columns div h3{
+    margin-bottom: 30px;
+}
+div#highlightsPage div#columns div ul li p{
+    font-size: calc(16px * 1.618) ;
+}
+div#highlightsPage div#columns div ul{
+    line-height: 50px;
+    text-align: left;
+}
+div#highlightsPage div#columns div ul li{
+    margin-left: 30px;
+    
+}
+
+.highlightsPageFade{
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+    
+}
+#backNavigation {
+    color: #efefef;
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: start ;
+}
+
+#backNavigation #backNavigationButtonWrapper {
+    display: grid;
+    width: 100%;
+    place-items: start;
+}
+
+#backNavigation #backNavigationButtonWrapper #backNavigationButton{
+    background: transparent;
+    width: 130px;
+    border: none;
+    color: #efefef;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: right;
+}
+
+#backNavigation #backNavigationButtonWrapper #backNavigationButton #backNavigationIcon {
+    fill: #efefef;
+    height: 24px;
+    width: auto;
+    padding-top: 8px;
+    padding-left: 4px;
+    transition: all 600ms;
+}
+#backNavigation #backNavigationButtonWrapper #backNavigationButton #backNavigationButtonText{
+    margin-left: 10px;
+}
+
+#backNavigation #backNavigationButtonWrapper #backNavigationButton:hover {
+    animation: push 250ms forwards;
+}
+@keyframes push {
+    100% { transform: scaleX(0.9); }
+    
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }       
+}
+.highlightsPageFadeOut{
+    animation: fadeOut 0.5s forwards;
+}
+@keyframes fromLeft {
+    0%{ left:-150% ;}
+    100% { left: 0;}
+}
+.backSwitchPage{
+    animation: fromLeft 1000ms forwards;
+}
